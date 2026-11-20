@@ -4,6 +4,12 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Política de Privacidade — Tinpety</title>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Tinpety"/>
+<meta property="og:title" content="Política de Privacidade e Termos de Uso — Tinpety"/>
+<meta property="og:description" content="Como o Tinpety coleta, usa e protege os seus dados e os dos seus pets."/>
+<meta property="og:url" content="https://tinpety.com/privacidade/"/>
+<meta property="og:image" content="https://tinpety.com/app-icon.png"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -156,7 +162,7 @@
 
 <a class="back-home" href="/">&larr; Voltar para a página inicial</a>
 <h1>Termos de Uso e Política de Privacidade</h1>
-<p class="subtitle">Tinpety &nbsp;|&nbsp; Versão 1.0 &nbsp;|&nbsp; Atualização: 23 de junho de 2026</p>
+<p class="subtitle">Tinpety &nbsp;|&nbsp; Versão 1.1 &nbsp;|&nbsp; Atualização: 20 de novembro de 2026</p>
 
 <div class="highlight">
   Leia atentamente este documento antes de utilizar o aplicativo. Ele reúne, em texto único
@@ -354,10 +360,17 @@
 <p><strong>5.4. Mensagens e interações:</strong></p>
 <ul>
   <li>Mensagens de chat entre usuários (combinação e adoção) são armazenadas no Firestore;</li>
-  <li>Interações de curtir/não curtir entre pets são registradas de forma anonimizada;</li>
+  <li>Interações de curtir/não curtir entre pets são registradas, vinculadas aos pets e às contas envolvidas;</li>
   <li>Denúncias enviadas por usuários são armazenadas para análise interna da equipe;</li>
   <li>Solicitações de parentesco, transferência de pets e tickets de suporte são registrados.</li>
 </ul>
+
+<p><strong>5.4.1. Alerta de animal perdido:</strong> ao marcar um pet como perdido, você
+  publica para <strong>todos os usuários do app</strong> o nome e a foto do pet, o provável
+  local da perda, a localização aproximada do alerta e, se informado, o
+  <strong>telefone de contato</strong> (usado para abrir uma conversa pelo WhatsApp). Informe
+  o telefone apenas se concordar com essa exibição. O alerta é encerrado quando você
+  desmarca a opção, quando o pet é encontrado ou quando é registrado o falecimento.</p>
 
 <p><strong>5.5. Dados de dispositivo e uso:</strong></p>
 <ul>
@@ -399,20 +412,31 @@
   <li>
     <strong>Google Firebase</strong> — autenticação, banco de dados (Firestore), armazenamento
     de fotos (Cloud Storage), analytics e notificações push (FCM).
-    <a href="https://firebase.google.com/support/privacy" target="_blank">Ver política</a>;
+    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ver política</a>;
+  </li>
+  <li>
+    <strong>Firebase App Check e Google Play Integrity</strong> — verificação de que as
+    requisições vêm do aplicativo oficial, instalado em um dispositivo íntegro, para
+    proteger a plataforma contra fraudes e acessos automatizados.
+    <a href="https://developer.android.com/google/play/integrity/overview" target="_blank" rel="noopener">Ver política</a>;
+  </li>
+  <li>
+    <strong>Google Gemini</strong> — análise automatizada das fotos enviadas, para moderação
+    de conteúdo impróprio (ver Seção 8.4).
+    <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Ver política</a>;
   </li>
   <li>
     <strong>Google AdMob</strong> — exibição de anúncios dentro do app.
-    <a href="https://support.google.com/admob/answer/6128543" target="_blank">Ver política</a>;
+    <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Ver política</a>;
   </li>
   <li>
     <strong>Google Maps Platform</strong> — busca de endereços e exibição de mapas.
-    <a href="https://cloud.google.com/maps-platform/terms" target="_blank">Ver política</a>;
+    <a href="https://cloud.google.com/maps-platform/terms" target="_blank" rel="noopener">Ver política</a>;
   </li>
   <li>
     <strong>Google ML Kit</strong> — tradução de textos processada <strong>localmente no
     dispositivo</strong>, sem envio de dados ao servidor.
-    <a href="https://developers.google.com/ml-kit/terms" target="_blank">Ver política</a>.
+    <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">Ver política</a>.
   </li>
 </ul>
 <p>
@@ -458,8 +482,9 @@
   básicas de consistência das fotos enviadas (por exemplo, comparação com a foto de
   perfil do pet). Essa análise tem caráter preventivo e de moderação de conteúdo,
   podendo resultar no bloqueio automático de imagens que não estejam em conformidade
-  com estas diretrizes. As imagens ou fotos poderão ser utilizadas para treinamentos 
-  de modelos de IA de terceiros.
+  com estas diretrizes. Para essa análise, as imagens são enviadas ao serviço
+  <strong>Google Gemini</strong> (ver Seção 7). O Tinpety <strong>não utiliza</strong> suas
+  fotos para treinar modelos de inteligência artificial.
 </p>
 <p>
   <strong>8.5.</strong> O Tinpety se reserva o direito de remover qualquer conteúdo que viole
@@ -569,6 +594,9 @@
   <li><strong>Dados dos pets</strong> — enquanto o pet estiver cadastrado na conta;</li>
   <li><strong>Fotos</strong> — enquanto associadas a um pet ou perfil ativo;</li>
   <li><strong>Mensagens de chat</strong> — enquanto a conversa existir no app;</li>
+  <li><strong>Curtidas e combinações sem conversa</strong> — curtidas não correspondidas,
+    descartes e combinações em que nenhuma mensagem foi trocada são excluídos
+    automaticamente após <strong>30 dias</strong> sem atividade;</li>
   <li><strong>Logs de analytics</strong> — até 14 meses (padrão do Firebase Analytics);</li>
   <li><strong>Denúncias e tickets de suporte</strong> — até 2 anos após o encerramento da análise;</li>
   <li><strong>Dados biométricos</strong> — somente no dispositivo; removidos ao desinstalar o app.</li>
@@ -710,7 +738,7 @@
 <p>
   Você também pode registrar reclamações junto à
   <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>:
-  <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a>.
+  <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">www.gov.br/anpd</a>.
 </p>
 
 </main>

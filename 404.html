@@ -52,6 +52,8 @@
       // Extrai o id do pet do caminho: /pet/{petId}
       var m = location.pathname.match(/\/pet\/([^\/?#]+)/);
       var petId = m ? m[1] : "";
+      // Ids do Firestore só têm letras, números, _ e -; qualquer outra coisa é descartada
+      if (!/^[A-Za-z0-9_-]+$/.test(petId)) petId = "";
 
       var ua = navigator.userAgent || "";
       var isAndroid = /android/i.test(ua);

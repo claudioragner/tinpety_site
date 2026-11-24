@@ -11,9 +11,10 @@ There is no build system, package manager, linter, or test suite. The site is pl
 ## Structure
 
 - `index.html` — marketing home: sticky header with menu (CSS-only hamburger on mobile via `#menu-toggle` checkbox), hero, feature cards, Google Play CTA, footer linking the policy pages. Play Store links point to `https://play.google.com/store/apps/details?id=app.tinpety` (package from `assetlinks.json`). Uses the logo purple `#5c26ff` via CSS variables on `:root`.
-- `logomarcahorizontal.png` — horizontal Tinpety logo shown on the landing page.
-- `app-icon.png` — app icon as shown on the Play Store (white outline paw from `LogoPata.png` on a purple `#5c26ff` rounded square, 512×512), used as the home hero image.
-- `favicon.png` — site favicon (solid purple paw on transparent background), referenced by every page. Extracted from the paw in `logomarcahorizontal.png`; `LogoPata.png` is the white-outline paw art from the Android app icon, the source for `app-icon.png`.
+- `logotipo.svg` — "Tinpety" wordmark (text only, purple `#5C26FF`), used as the logo in the shared header and footer. Copied from `design/logotipo_texto_roxo.svg` in the app repository (`claudioragner/tinpety_app`), which is where the brand assets live.
+- `app-icon.png` — the Play Store icon (white horse with bow tie on purple, 512×512, square; the page rounds its corners with CSS), used as the home hero image and as the `og:image` share preview. Copied from `play-store-assets/icone_512x512.png` in the app repository.
+- `favicon.png` — site favicon: purple horse with a white outline (so it stays visible on dark browser tabs), transparent background, 256×256. Rendered from `design/logo_cavalo_roxo_borda_branca.svg` in the app repository.
+- `LogoPata.png` — old paw icon art from before the horse rebrand; no longer used by the site.
 - `privacidade/index.html` — Privacy Policy and Terms of Use (Política de Privacidade e Termos de Uso).
 - `seguranca-infantil/index.html` — Child Safety Standards (Padrões de Segurança Infantil).
 - `404.html` — not a plain error page: it is the fallback for App Links URLs like `tinpety.com/pet/{petId}`. Its inline script sends Android users to the app via an `intent://` URL (Play Store as fallback) and shows a download button otherwise. Keep its script working when editing it.
